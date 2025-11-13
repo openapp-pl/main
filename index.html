@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moja Strona</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background: #007bff;
+      color: white;
+      padding: 20px 0;
+      font-size: 24px;
+    }
+
+    img {
+      width: 300px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    section {
+      margin-top: 20px;
+    }
+
+    .fade {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <header>🌟 Moja Pierwsza Strona</header>
+
+  <section>
+    <h2>Witaj!</h2>
+    <p>Kliknij przyciski, aby zobaczyć działanie strony.</p>
+    <img id="obrazek" src="https://picsum.photos/400/300" alt="Losowy obraz">
+    <br>
+    <button onclick="zmienObraz()">Zmień obraz</button>
+    <button onclick="pokazTekst()">Pokaż ukryty tekst</button>
+  </section>
+
+  <section id="sekcja-ukryta" class="fade">
+    <h3>🎉 Niespodzianka!</h3>
+    <p>Właśnie odkryłeś ukrytą sekcję z efektem przejścia.</p>
+  </section>
+
+  <script>
+    function zmienObraz() {
+      document.getElementById("obrazek").src = "https://picsum.photos/400/300?random=" + Math.floor(Math.random() * 100);
+    }
+
+    function pokazTekst() {
+      const sekcja = document.getElementById("sekcja-ukryta");
+      sekcja.classList.add("show");
+    }
+  </script>
+
+</body>
+</html>
