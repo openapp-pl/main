@@ -1,1 +1,55 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Moja Strona - logowanie</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <nav class="topbar">
+    <div class="left">
+      <a class="brand" href="/">MojaStrona</a>
+      <a href="#" class="nav-link">Home</a>
+      <a href="#" class="nav-link">O nas</a>
+      <a href="#" class="nav-link">Kontakt</a>
+    </div>
+    <div class="right" id="auth-area">
+      <!-- Tu będzie przycisk logowania lub "Witaj, ..." -->
+      <button id="login-open">Zaloguj się</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1>Witaj na stronie</h1>
+    <p id="message">Użyj paska powyżej, żeby się zalogować lub zarejestrować.</p>
+
+    <section id="private" class="hidden">
+      <h2>Strona dla zalogowanych</h2>
+      <p>To widzi tylko zalogowany użytkownik.</p>
+    </section>
+  </main>
+
+  <!-- Modal logowania / rejestracji -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <button id="close-modal" class="close">×</button>
+      <h3 id="modal-title">Zaloguj się</h3>
+
+      <form id="auth-form">
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="password" id="password" placeholder="Hasło" required />
+        <div class="actions">
+          <button id="submit-btn" type="submit">Zaloguj</button>
+          <button id="switch-btn" type="button">Nie masz konta? Zarejestruj się</button>
+        </div>
+      </form>
+
+      <div id="form-msg" class="form-msg"></div>
+    </div>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
 
